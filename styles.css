@@ -145,14 +145,21 @@ img { display:block; max-width:100%; }
 .hero-cta { display:flex; gap:16px; align-items:center; flex-wrap:wrap; }
 .hero-fig { position:relative; }
 .hero-fig .portrait { width:100%; aspect-ratio:4/4.7; object-fit:cover; object-position:center 22%;
-  border-radius:var(--img-radius); box-shadow:var(--glow); }
+  border-radius:var(--img-radius); box-shadow:var(--glow);
+  transition: transform 0.4s ease, border-radius 0.4s ease; }
 .hero-fig .frame { position:absolute; inset:-18px; border:1.5px solid color-mix(in srgb,var(--accent) 38%,transparent);
-  border-radius:var(--img-radius); z-index:-1; }
+  border-radius:var(--img-radius); z-index:-1;
+  transition: transform 0.4s ease, border-radius 0.4s ease; }
 
 .hero-fig .glit { position:absolute; right:-20px; bottom:20px; width:146px; height:146px; object-fit:cover;
   border-radius:50%; border:5px solid var(--bg); box-shadow:0 12px 30px rgba(80,50,30,.28); z-index:3;
-  transition: border-color 0.4s ease, border-radius 0.4s ease; }
+  transition: border-color 0.4s ease, border-radius 0.4s ease, transform 0.4s ease; }
 [data-theme="m"] .hero-fig .glit { border-radius: var(--img-radius); }
+
+/* Hero hover animations */
+.hero-fig:hover .portrait { transform: scale(1.02) translateY(-2px); }
+.hero-fig:hover .frame { transform: translate(-5px, -5px) scale(0.99); }
+.hero-fig:hover .glit { transform: translate(4px, -4px) scale(1.03); }
 
 /* ---------- verwachten (intro) ---------- */
 .verwacht { background:var(--bg-alt); transition:background .4s ease; }
@@ -180,7 +187,9 @@ img { display:block; max-width:100%; }
 .jij h2 { font-size:clamp(32px,4.4vw,50px); margin:16px 0 26px; color:var(--band-fg); }
 .jij p { color:color-mix(in srgb,var(--band-fg) 88%, transparent); margin-bottom:18px; }
 .jij .portrait { width:100%; aspect-ratio:4/4.8; object-fit:cover; object-position:center 20%;
-  border-radius:var(--img-radius); box-shadow:var(--glow); }
+  border-radius:var(--img-radius); box-shadow:var(--glow);
+  transition: transform 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease; }
+.jij .portrait:hover { transform: scale(1.02) translateY(-3px); box-shadow: 0 16px 38px rgba(0,0,0,0.25); }
 .jij .closer { font-family:var(--fd); font-weight:var(--fdw); font-size:24px; line-height:1.35;
   color:var(--band-fg); margin-top:8px; }
 
@@ -331,6 +340,11 @@ img { display:block; max-width:100%; }
   border: 4px solid color-mix(in srgb, var(--band-fg) 70%, transparent);
   box-shadow: var(--glow);
   display: block;
+  transition: transform 0.4s ease, border-radius 0.4s ease, box-shadow 0.4s ease;
+}
+.closing-portrait:hover {
+  transform: scale(1.03) translateY(-2px);
+  box-shadow: 0 12px 30px rgba(0,0,0,0.25);
 }
 
 /* ---------- reveal on scroll ---------- */
