@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="nl" data-theme="a">
+<html lang="nl" data-theme="f">
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -302,20 +302,22 @@
 <!-- ============ STIJL-SWITCHER ============ -->
 <div class="switcher" role="group" aria-label="Kies een stijl">
   <span class="lbl">Stijl</span>
-  <button data-t="a" title="Aardse Ziel" aria-pressed="true">A</button>
-  <button data-t="b" title="Stille Helderheid" aria-pressed="false">B</button>
-  <button data-t="c" title="Zachte Gloed" aria-pressed="false">C</button>
-  <button data-t="d" title="Obsidiaan & Messing" aria-pressed="false">D</button>
+  <button data-t="f" title="Aardse Ziel" aria-pressed="true">F</button>
+  <button data-t="m" title="Obsidiaan & Messing" aria-pressed="false">M</button>
 </div>
 
 <script>
-  // Stijl-switcher: wisselt thema A / B / C / D en onthoudt de keuze.
+  // Stijl-switcher: wisselt thema F / M en onthoudt de keuze.
   (function () {
     var root = document.documentElement;
     var btns = document.querySelectorAll('.switcher button');
     var saved = null;
     try { saved = localStorage.getItem('sparkleTheme'); } catch (e) {}
-    if (saved && ['a', 'b', 'c', 'd'].indexOf(saved) >= 0) setTheme(saved);
+    if (saved && ['f', 'm'].indexOf(saved) >= 0) {
+      setTheme(saved);
+    } else {
+      setTheme('f');
+    }
     function setTheme(t) {
       root.setAttribute('data-theme', t);
       btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.t === t)); });
