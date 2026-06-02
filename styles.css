@@ -151,7 +151,8 @@ img { display:block; max-width:100%; }
 
 .hero-fig .glit { position:absolute; right:-20px; bottom:20px; width:146px; height:146px; object-fit:cover;
   border-radius:50%; border:5px solid var(--bg); box-shadow:0 12px 30px rgba(80,50,30,.28); z-index:3;
-  transition: border-color 0.4s ease; }
+  transition: border-color 0.4s ease, border-radius 0.4s ease; }
+[data-theme="m"] .hero-fig .glit { border-radius: var(--img-radius); }
 
 /* ---------- verwachten (intro) ---------- */
 .verwacht { background:var(--bg-alt); transition:background .4s ease; }
