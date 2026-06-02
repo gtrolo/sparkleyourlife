@@ -43,6 +43,19 @@
   --glow:0 22px 54px rgba(150,90,55,.22);
 }
 
+/* ---------- THEMA D · Obsidiaan & Messing (Stoere Kracht) ---------- */
+[data-theme="d"] {
+  --bg:#1a1d1b; --bg-alt:#242825; --ink:#f1f3f2; --muted:#939a95;
+  --accent:#cca374; --accent-deep:#b38c5f; --accent-2:#55665c;
+  --line:rgba(241,243,242,0.12);
+  --hero-bg:radial-gradient(120% 92% at 72% 14%,#282f2a 0%,#1a1d1b 100%);
+  --band-bg:#151816; --band-fg:#f1f3f2;
+  --img-radius:4px;
+  --card-radius:8px;
+  --fd:'Cinzel',serif; --fdw:700; --fb:'Karla',sans-serif;
+  --glow:0 12px 36px rgba(0,0,0,0.4);
+}
+
 * { box-sizing:border-box; }
 html { scroll-behavior:smooth; }
 body {
@@ -249,11 +262,13 @@ img { display:block; max-width:100%; }
 /* ---------- footer ---------- */
 .foot { background:#2b2620; color:#b7a896; }
 [data-theme="c"] .foot { background:#3a2c24; }
+[data-theme="d"] .foot { background:#121413; }
 .foot-in { display:flex; align-items:center; justify-content:space-between; gap:24px;
-  max-width:1180px; margin:0 auto; padding:40px; font-size:14.5px; flex-wrap:wrap; }
+  max-width:1180px; margin:0 auto; padding:40px 40px 20px; font-size:14.5px; flex-wrap:wrap; }
 .foot .brand { color:#f4ece0; }
 .foot a { color:#cdbfae; text-decoration:none; }
 .foot .foot-nav { display:flex; gap:24px; flex-wrap:wrap; }
+.foot-copy { text-align:center; font-size:12px; color:rgba(183,168,150,0.45); padding:0 40px 32px; letter-spacing:0.5px; }
 
 /* ---------- stijl-switcher ---------- */
 .switcher {
@@ -275,6 +290,74 @@ img { display:block; max-width:100%; }
 .switcher button[data-t="a"][aria-pressed="true"] { background:#a96746; }
 .switcher button[data-t="b"][aria-pressed="true"] { background:#272320; }
 .switcher button[data-t="c"][aria-pressed="true"] { background:#cf8463; }
+.switcher button[data-t="d"][aria-pressed="true"] { background:#cca374; }
+
+/* ---------- layout image enhancements ---------- */
+.offer-img {
+  width: 100%;
+  aspect-ratio: 16/10;
+  overflow: hidden;
+  border-radius: var(--img-radius);
+  margin: 18px 0 16px;
+}
+.offer-img img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  transition: transform 0.4s ease;
+}
+.offer:hover .offer-img img {
+  transform: scale(1.05);
+}
+
+.image-stack {
+  position: relative;
+  width: 100%;
+  max-width: 440px;
+  aspect-ratio: 1/1.1;
+  margin: 0 auto;
+}
+.image-stack .portrait {
+  object-fit: cover;
+  border-radius: var(--img-radius);
+  box-shadow: var(--glow);
+  position: absolute;
+  transition: transform 0.4s ease;
+}
+.image-stack .main-img {
+  width: 78%;
+  height: 82%;
+  left: 0;
+  top: 0;
+  z-index: 2;
+}
+.image-stack .sub-img {
+  width: 58%;
+  height: 62%;
+  right: 0;
+  bottom: 0;
+  z-index: 3;
+  border: 4px solid var(--bg);
+  transition: transform 0.4s ease, border-color 0.4s ease;
+}
+.image-stack:hover .main-img {
+  transform: translateY(-4px) translateX(-4px);
+}
+.image-stack:hover .sub-img {
+  transform: translateY(4px) translateX(4px);
+}
+
+.closing-portrait {
+  width: 140px;
+  height: 140px;
+  border-radius: var(--img-radius);
+  object-fit: cover;
+  object-position: center 20%;
+  margin: 0 auto 30px;
+  border: 4px solid color-mix(in srgb, var(--band-fg) 70%, transparent);
+  box-shadow: var(--glow);
+  display: block;
+}
 
 /* ---------- reveal on scroll ---------- */
 .reveal { opacity:0; transform:translateY(22px); transition:opacity .7s ease, transform .7s ease; }

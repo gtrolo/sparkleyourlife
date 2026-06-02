@@ -25,7 +25,7 @@
 <link rel="icon" href="assets/logo-sparkle.png" />
 <link rel="preconnect" href="https://fonts.googleapis.com" />
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
-<link href="https://fonts.googleapis.com/css2?family=Marcellus&family=Mulish:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Karla:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
+<link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@600;700;800&family=Marcellus&family=Mulish:wght@400;600;700;800&family=Newsreader:ital,opsz,wght@0,6..72,400;0,6..72,500;1,6..72,400;1,6..72,500&family=Karla:wght@400;600;700&family=Cormorant+Garamond:ital,wght@0,500;0,600;1,500&family=Nunito+Sans:wght@400;600;700;800&display=swap" rel="stylesheet" />
 <link rel="stylesheet" href="styles.css" />
 </head>
 <body>
@@ -184,6 +184,9 @@
       <article class="offer reveal">
         <span class="kicker">Face to face of op afstand</span>
         <h3>Biotensor sessie</h3>
+        <div class="offer-img">
+          <img src="uploads/photo-1586257078534-581588df3fe0.jpeg" alt="Glow van energie en biotensor werk" />
+        </div>
         <p class="short">Werken met energie en intuïtie, dichtbij of op afstand.</p>
         <p class="more">Met de biotensor maken we zichtbaar wat zich vaak onder de oppervlakte afspeelt. Het is een zachte, intuïtieve manier om te voelen waar energie vastzit en waar weer ruimte mag ontstaan. Of je nu tegenover me zit of we werken op afstand, je hoeft niets te presteren. We luisteren samen naar de signalen van je lichaam en je systeem, en gebruiken wat we vinden als startpunt voor verandering.</p>
       </article>
@@ -191,6 +194,9 @@
       <article class="offer reveal">
         <span class="kicker">1 op 1 · koppels · groepen</span>
         <h3>Choco bliss reizen</h3>
+        <div class="offer-img">
+          <img src="uploads/photo-1520533881-8a3699d7e58b.jpeg" alt="Innerlijke reis silhouet" />
+        </div>
         <p class="short">Een reis naar binnen, voor jezelf, samen of in een groep.</p>
         <p class="more">Een Choco bliss reis is een warme uitnodiging om even helemaal naar binnen te keren. Met pure cacao als gids zakken we uit ons hoofd, terug naar het gevoel en naar wat het hart te zeggen heeft. Je kunt deze reis alleen maken, samen met je partner of in een groep. Het is zacht, hartopenend en vooral een moment van puur bij jezelf zijn.</p>
       </article>
@@ -230,7 +236,10 @@
   <div class="wrap">
     <div class="grid">
       <div class="figcol reveal">
-        <img class="portrait" src="uploads/IMG_6348-cmid_x3sw8-uaagyj.jpeg" alt="Fanny" />
+        <div class="image-stack">
+          <img class="portrait main-img" src="uploads/IMG_6348-cmid_x3sw8-uaagyj.jpeg" alt="Fanny contemplatief" />
+          <img class="portrait sub-img" src="uploads/IMG_6336-cmid_x3sw0-biznag.jpeg" alt="Fanny lachend bij het raam" />
+        </div>
       </div>
       <div class="reveal">
         <span class="eyebrow">Dit ben ik</span>
@@ -250,7 +259,7 @@
 <!-- ============ CLOSING / CONTACT ============ -->
 <section class="closing" id="contact">
   <div class="inner reveal">
-    <img class="logo" src="assets/logo-sparkle.png" alt="Sparkle your Life" />
+    <img class="closing-portrait" src="uploads/IMG_6337-cmid_x3sw5-8oz6n.jpeg" alt="Fanny nodigt je uit" />
     <h2>Klaar om jouw Sparkle<br />weer terug te vinden?</h2>
     <p>Je bent hier op de juiste plek. Samen ontdekken we wat voor jou werkt, zonder oordeel, met praktische inzichten en oprechte steun.</p>
     <a class="btn light" href="mailto:info@sparkleyourlife.nl">Plan een kennismaking</a>
@@ -271,6 +280,9 @@
     </nav>
     <div>info@sparkleyourlife.nl</div>
   </div>
+  <div class="foot-copy">
+    &copy; 2026 Rolo Logic
+  </div>
 </footer>
 
 <!-- ============ STIJL-SWITCHER ============ -->
@@ -279,16 +291,17 @@
   <button data-t="a" title="Aardse Ziel" aria-pressed="true">A</button>
   <button data-t="b" title="Stille Helderheid" aria-pressed="false">B</button>
   <button data-t="c" title="Zachte Gloed" aria-pressed="false">C</button>
+  <button data-t="d" title="Obsidiaan & Messing" aria-pressed="false">D</button>
 </div>
 
 <script>
-  // Stijl-switcher: wisselt thema A / B / C en onthoudt de keuze.
+  // Stijl-switcher: wisselt thema A / B / C / D en onthoudt de keuze.
   (function () {
     var root = document.documentElement;
     var btns = document.querySelectorAll('.switcher button');
     var saved = null;
     try { saved = localStorage.getItem('sparkleTheme'); } catch (e) {}
-    if (saved && ['a', 'b', 'c'].indexOf(saved) >= 0) setTheme(saved);
+    if (saved && ['a', 'b', 'c', 'd'].indexOf(saved) >= 0) setTheme(saved);
     function setTheme(t) {
       root.setAttribute('data-theme', t);
       btns.forEach(function (b) { b.setAttribute('aria-pressed', String(b.dataset.t === t)); });
