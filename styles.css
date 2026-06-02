@@ -219,9 +219,13 @@ img { display:block; max-width:100%; }
 .ik p .accentline { color:var(--ink); font-weight:600; }
 
 /* ---------- closing / contact ---------- */
-.closing { position:relative; background:var(--band-bg); color:var(--band-fg);
+.closing { position:relative; color:var(--band-fg);
   text-align:center; transition:background .4s ease; overflow:hidden; }
-.closing .inner { position:relative; max-width:780px; margin:0 auto; padding:120px 40px; }
+.closing .bgimg { position:absolute; inset:0; width:100%; height:100%; object-fit:cover; }
+.closing .tint { position:absolute; inset:0;
+  background:linear-gradient(180deg, color-mix(in srgb,var(--band-bg) 60%, rgba(20,14,10,.5)), color-mix(in srgb,var(--band-bg) 80%, rgba(10,10,10,0.85)));
+  transition:background-color 0.4s ease; }
+.closing .inner { position:relative; max-width:780px; margin:0 auto; padding:120px 40px; z-index:2; }
 .closing .logo { width:132px; height:132px; border-radius:50%; object-fit:cover; margin:0 auto 30px;
   border:6px solid color-mix(in srgb,var(--band-fg) 88%, transparent); box-shadow:0 16px 44px rgba(30,18,10,.32); }
 .closing h2 { font-size:clamp(36px,5vw,58px); color:var(--band-fg); margin-bottom:22px; }
