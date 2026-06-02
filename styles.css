@@ -52,7 +52,7 @@
   --band-bg:#151816; --band-fg:#f1f3f2;
   --img-radius:4px;
   --card-radius:8px;
-  --fd:'Cinzel',serif; --fdw:700; --fb:'Karla',sans-serif;
+  --fd:'Marcellus',serif; --fdw:400; --fb:'Mulish',sans-serif;
   --glow:0 12px 36px rgba(0,0,0,0.4);
 }
 
@@ -256,7 +256,8 @@ img { display:block; max-width:100%; }
   border:6px solid color-mix(in srgb,var(--band-fg) 88%, transparent); box-shadow:0 16px 44px rgba(30,18,10,.32); }
 .closing h2 { font-size:clamp(36px,5vw,58px); color:var(--band-fg); margin-bottom:22px; }
 .closing p { color:color-mix(in srgb,var(--band-fg) 88%, transparent); font-size:20px; max-width:560px; margin:0 auto 36px; }
-.closing .mail { display:inline-block; margin-top:26px; color:var(--band-fg); text-decoration:none;
+.closing-actions { display:flex; align-items:center; justify-content:center; gap:32px; flex-wrap:wrap; margin-top:40px; }
+.closing .mail { display:inline-block; color:var(--band-fg); text-decoration:none;
   font-weight:600; letter-spacing:.3px; border-bottom:1.5px solid color-mix(in srgb,var(--band-fg) 60%,transparent); padding-bottom:3px; }
 
 /* ---------- footer ---------- */
