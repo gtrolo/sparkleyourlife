@@ -130,6 +130,25 @@
   .spk .spk-main,.spk .spk-mini{animation:none;opacity:1;}
 }
 
+/* hero words: 1 regel op desktop, iets kleiner indien nodig */
+@media (min-width:881px){
+  .hb-words{flex-wrap:nowrap;gap:0 clamp(14px,2vw,40px);}
+  .hb-words span{font-size:clamp(11px,1.05vw,15px);white-space:nowrap;}
+}
+
+/* hover animaties: subtiele lift op tekst-elementen */
+.hb-words span{transition:color .22s ease,transform .22s ease;cursor:default;}
+.hb-words span:hover{color:var(--driftwood,#b0896a);transform:translateY(-3px);}
+.pijler{transition:transform .28s ease;}
+.pijler:hover{transform:translateY(-5px);}
+.aanbod-cell{transition:transform .28s ease,box-shadow .28s ease;}
+.aanbod-cell:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(40,37,33,.10);}
+.bw-row{transition:background .2s;}
+.bw-row:hover .from,.bw-row:hover .to{color:var(--walnut);}
+@media (prefers-reduced-motion:reduce){
+  .hb-words span,.pijler,.aanbod-cell,.bw-row{transition:none;}
+}
+
 /* ---------- V8: sparkle i.p.v. streep bij sectietitels ---------- */
 .kicker::before,.kicker.center::after{
   width:14px!important;height:14px!important;background:transparent!important;
@@ -224,6 +243,7 @@
     <div class="sfeer-caption reveal">
       <span class="kicker">Rust · ruimte · eenvoud</span>
       <p class="muted" style="max-width:52ch;font-size:15.5px">Door te vereenvoudigen ontstaat ruimte. Door ruimte ontstaat helderheid. Door helderheid ontstaat verandering.</p>
+      <p class="muted" style="max-width:52ch;font-size:15.5px;margin-top:14px">Bij Sparkle your Life creëren we ruimte om te vertragen, te vereenvoudigen en opnieuw verbinding te maken met wat voor jou werkelijk belangrijk is, zodat persoonlijke groei, bewust leven en duurzame verandering als vanzelf kunnen ontstaan.</p>
     </div>
   </div>
 </section>
@@ -263,7 +283,9 @@
         <div class="prose">
           <p>Sparkle your Life is een plek voor persoonlijke groei, bewust leven en duurzame verandering. Geen standaard trajecten. Geen snelle oplossingen. Wel een omgeving waarin rust, ruimte en aandacht centraal staan.</p>
           <p>Samen creëren we helderheid in situaties die complex voelen. We brengen terug wat overbodig is, zodat zichtbaar wordt wat werkelijk belangrijk is.</p>
+          <p>Door te vertragen ontstaat ruimte. Door te vereenvoudigen ontstaat helderheid. Door helderheid ontstaat verandering.</p>
           <p class="big">Mijn rol is niet om je te vertellen wat je moet doen. Mijn rol is om samen met jou te onderzoeken wat voor jou klopt, zodat je keuzes kunt maken die passen bij wie je bent en hoe je wilt leven.</p>
+          <p>De antwoorden zijn vaak dichterbij dan je denkt. Soms is er alleen iemand nodig die helpt om ze zichtbaar te maken.</p>
         </div>
       </div>
     </div>
@@ -323,7 +345,8 @@
         <span class="kicker">Dit doe ik</span>
         <h2 class="h2" style="margin:18px 0 22px">Begeleiding voor wie voelt dat het tijd is voor verandering</h2>
         <div class="prose">
-          <p>Ik begeleid mensen die veel verantwoordelijkheid dragen, veel geven aan anderen en tegelijkertijd merken dat er behoefte ontstaat aan meer rust, ruimte en richting. Soms speelt er een concrete uitdaging. Soms is er alleen een gevoel dat het huidige leven niet meer helemaal past.</p>
+          <p>Ik begeleid mensen die voelen dat het tijd is voor verandering.</p>
+          <p>Mensen die veel verantwoordelijkheid dragen, veel geven aan anderen en tegelijkertijd merken dat er behoefte ontstaat aan meer rust, ruimte en richting. Soms speelt er een concrete uitdaging. Soms is er alleen een gevoel dat het huidige leven niet meer helemaal past.</p>
           <p>Samen onderzoeken we wat aandacht vraagt. We brengen overzicht waar chaos is ontstaan, helderheid waar twijfel overheerst en vereenvoudiging waar het leven onnodig ingewikkeld is geworden.</p>
           <p class="big">Mijn aanpak combineert praktische begeleiding met intuïtieve inzichten. Altijd afgestemd op jou als mens.</p>
           <p><span class="loose">Niet op een standaard methode. Niet op een vast stappenplan. Maar op wat jij op dit moment nodig hebt.</span></p>
@@ -379,7 +402,8 @@
         <h2 class="h2" style="margin:18px 0 18px">Je voelt dat er iets mag veranderen</h2>
         <div class="prose">
           <p>Misschien kun je precies benoemen wat. Misschien ook niet. Maar ergens weet je dat het tijd is om stil te staan bij hoe je leeft, werkt en keuzes maakt.</p>
-          <p>Je neemt verantwoordelijkheid, kunt veel dragen en gaat vaak door. Voor anderen, voor het werk, voor het gezin. En ondertussen groeit het verlangen naar meer rust, meer ruimte, meer eenvoud en meer helderheid.</p>
+          <p>Je bent iemand die verantwoordelijkheid neemt. Die veel kan dragen. Die vaak doorgaat. Voor anderen, voor het werk, voor het gezin. En ondertussen groeit het verlangen naar meer rust, meer ruimte, meer eenvoud en meer helderheid.</p>
+          <p>Misschien voel je je regelmatig overprikkeld. Misschien ben je het overzicht kwijtgeraakt. Misschien ben je succesvol in wat je doet, maar mis je iets wat moeilijk onder woorden te brengen is.</p>
         </div>
         <div class="chips">
           <span>Ondernemers</span><span>Professionals</span><span>Leidinggevenden</span><span>Zelfstandigen</span><span>Ouders</span><span>In een overgangsfase</span>
@@ -499,6 +523,7 @@
     <div class="footer-bottom">
       <span>© 2026 Sparkle Your Life</span>
       <span>Meer rust. Meer ruimte. Meer jezelf.</span>
+      <a href="/v2/" style="font-size:12px;opacity:.5;color:inherit;text-decoration:underline;text-underline-offset:3px;letter-spacing:.02em;">Vorige versie</a>
     </div>
   </div>
 </footer>
