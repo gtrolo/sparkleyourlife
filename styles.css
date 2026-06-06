@@ -25,7 +25,7 @@
   /* rhythm */
   --maxw:1280px;
   --gutter:clamp(22px, 5vw, 80px);
-  --section-y:clamp(72px, 9vw, 150px);
+  --section-y:clamp(52px, 6vw, 96px);
 
   --line:rgba(117,104,90,.22);   /* hairline in driftwood */
   --line-mist:rgba(126,148,164,.34);
