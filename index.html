@@ -59,16 +59,33 @@
 .prose .big{font-family:var(--serif);font-size:clamp(21px,2.1vw,29px);line-height:1.32;color:var(--walnut);font-weight:400;}
 .loose{display:block;}
 
-/* pijlers — 5 in V1-pill ritme */
-.pijlers{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(18px,2vw,34px);margin-top:clamp(46px,5vw,72px);}
-.pijler{position:relative;padding-top:30px;}
-.pijler .pk{display:block;width:17px;height:17px;margin-bottom:16px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath d='M14 1.5C14.5 7.1 20.9 13.5 26.5 14 20.9 14.5 14.5 20.9 14 26.5 13.5 20.9 7.1 14.5 1.5 14 7.1 13.5 13.5 7.1 14 1.5Z' fill='%237E94A4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left center;background-size:contain;animation:kickGlint 3.8s ease-in-out infinite;}
+/* pijlers — kaart-stijl met serif-nummer */
+.pijlers{display:grid;grid-template-columns:repeat(5,1fr);gap:clamp(14px,1.8vw,26px);margin-top:clamp(46px,5vw,72px);}
+.pijler{
+  position:relative;overflow:hidden;
+  background:var(--chalk);
+  border:1px solid var(--line);
+  border-radius:4px;
+  padding:clamp(22px,2.4vw,34px) clamp(18px,1.8vw,26px) clamp(24px,2.6vw,36px);
+  box-shadow:0 2px 12px rgba(40,37,33,.05);
+}
+/* groot decoratief nummer rechtsboven */
+.pijler .pn{
+  position:absolute;top:-6px;right:10px;
+  font-family:var(--serif);font-weight:300;font-style:italic;
+  font-size:clamp(60px,6vw,88px);line-height:1;
+  color:var(--mist-deep);opacity:.13;
+  pointer-events:none;user-select:none;
+  letter-spacing:-.02em;
+}
+/* sparkle ster */
+.pijler .pk{display:block;width:18px;height:18px;margin-bottom:18px;background-image:url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 28 28'%3E%3Cpath d='M14 1.5C14.5 7.1 20.9 13.5 26.5 14 20.9 14.5 14.5 20.9 14 26.5 13.5 20.9 7.1 14.5 1.5 14 7.1 13.5 13.5 7.1 14 1.5Z' fill='%237E94A4'/%3E%3C/svg%3E");background-repeat:no-repeat;background-position:left center;background-size:contain;animation:kickGlint 3.8s ease-in-out infinite;}
 .pijler:nth-child(2) .pk{animation-delay:.5s;}
 .pijler:nth-child(3) .pk{animation-delay:1s;}
 .pijler:nth-child(4) .pk{animation-delay:1.5s;}
 .pijler:nth-child(5) .pk{animation-delay:2s;}
-.pijler h3{font-size:23px;margin-bottom:10px;}
-.pijler p{color:var(--ink-soft);font-size:14px;}
+.pijler h3{font-size:clamp(17px,1.5vw,21px);margin-bottom:10px;line-height:1.2;}
+.pijler p{color:var(--ink-soft);font-size:13px;line-height:1.6;}
 @media (prefers-reduced-motion:reduce){.pijler .pk{animation:none;}}
 
 /* missie / visie */
@@ -136,8 +153,8 @@
 /* hover animaties: subtiele lift op tekst-elementen */
 .hb-words span{transition:color .22s ease,transform .22s ease;cursor:default;}
 .hb-words span:hover{color:var(--driftwood,#b0896a);transform:translateY(-3px);}
-.pijler{transition:transform .28s ease;}
-.pijler:hover{transform:translateY(-5px);}
+.pijler{transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease;}
+.pijler:hover{transform:translateY(-5px);box-shadow:0 10px 32px rgba(40,37,33,.10);border-color:var(--mist-deep);}
 .aanbod-cell{transition:transform .28s ease,box-shadow .28s ease;}
 .aanbod-cell:hover{transform:translateY(-6px);box-shadow:0 12px 36px rgba(40,37,33,.10);}
 .bw-row{transition:background .2s;}
@@ -301,11 +318,11 @@
       <h2 class="h2" style="margin-top:18px">Waar alles op rust</h2>
     </div>
     <div class="pijlers">
-      <div class="pijler reveal"><span class="pk"></span><h3>Rust</h3><p>Vertragen. Ademen. Aanwezig zijn.</p></div>
-      <div class="pijler reveal d1"><span class="pk"></span><h3>Ruimte</h3><p>Fysiek. Mentaal. Emotioneel.</p></div>
-      <div class="pijler reveal d2"><span class="pk"></span><h3>Vereenvoudiging</h3><p>Terugbrengen naar de essentie. Loslaten wat niet meer dient.</p></div>
-      <div class="pijler reveal d3"><span class="pk"></span><h3>Helderheid</h3><p>Inzicht. Bewustwording. Richting.</p></div>
-      <div class="pijler reveal d4"><span class="pk"></span><h3>Verandering</h3><p>Vanuit vertrouwen. Duurzaam. Stap voor stap.</p></div>
+      <div class="pijler reveal"><span class="pn" aria-hidden="true">01</span><span class="pk"></span><h3>Rust</h3><p>Vertragen. Ademen. Aanwezig zijn.</p></div>
+      <div class="pijler reveal d1"><span class="pn" aria-hidden="true">02</span><span class="pk"></span><h3>Ruimte</h3><p>Fysiek. Mentaal. Emotioneel.</p></div>
+      <div class="pijler reveal d2"><span class="pn" aria-hidden="true">03</span><span class="pk"></span><h3>Vereenvoudiging</h3><p>Terugbrengen naar de essentie. Loslaten wat niet meer dient.</p></div>
+      <div class="pijler reveal d3"><span class="pn" aria-hidden="true">04</span><span class="pk"></span><h3>Helderheid</h3><p>Inzicht. Bewustwording. Richting.</p></div>
+      <div class="pijler reveal d4"><span class="pn" aria-hidden="true">05</span><span class="pk"></span><h3>Verandering</h3><p>Vanuit vertrouwen. Duurzaam. Stap voor stap.</p></div>
     </div>
   </div>
 </section>
