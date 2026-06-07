@@ -163,6 +163,16 @@
   .hb-words span,.pijler,.aanbod-cell,.bw-row{transition:none;}
 }
 
+/* ervaringen */
+.ervaringen{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,2vw,32px);margin-top:clamp(40px,5vw,64px);}
+.ervaring{background:var(--chalk);border:1px solid var(--line);border-radius:4px;padding:clamp(24px,2.8vw,38px);display:flex;flex-direction:column;gap:16px;}
+.ervaring-quote{font-family:var(--serif);font-size:clamp(17px,1.6vw,21px);line-height:1.5;color:var(--walnut);font-weight:300;font-style:italic;}
+.ervaring-quote::before{content:'\201C';font-size:1.4em;line-height:0;vertical-align:-.24em;margin-right:.08em;color:var(--mist-deep);opacity:.7;}
+.ervaring-meta{margin-top:auto;padding-top:16px;border-top:1px solid var(--line);}
+.ervaring-naam{font-size:var(--fs-sm);font-weight:500;letter-spacing:.06em;text-transform:uppercase;color:var(--ink);}
+.ervaring-label{font-size:var(--fs-xs);color:var(--ink-soft);margin-top:3px;}
+@media(max-width:880px){.ervaringen{grid-template-columns:1fr;}}
+
 /* ---------- V8: sparkle i.p.v. streep bij sectietitels ---------- */
 .kicker::before,.kicker.center::after{
   width:14px!important;height:14px!important;background:transparent!important;
@@ -417,6 +427,39 @@
     <div class="prose reveal" style="margin:clamp(40px,4vw,60px) auto 0;text-align:center;max-width:620px">
       <p>Wat jouw situatie ook is: je bent bereid om eerlijk te kijken naar wat niet meer werkt, je staat open voor verandering en je verlangt naar een leven dat meer in lijn is met wie je werkelijk bent.</p>
       <p class="big" style="margin-top:18px">Dan ben je hier op de juiste plek.</p>
+    </div>
+  </div>
+</section>
+
+<!-- ===================== ERVARINGEN ===================== -->
+<section class="bg-mist" aria-label="Ervaringen">
+  <div class="wrap">
+    <div class="belofte-head reveal" style="text-align:left;margin:0;max-width:640px">
+      <span class="kicker">Ervaringen</span>
+      <h2 class="h2" style="margin-top:18px">Wat anderen zeggen</h2>
+    </div>
+    <div class="ervaringen">
+      <div class="ervaring reveal">
+        <p class="ervaring-quote">Ik liep al jaren met hetzelfde gevoel rond zonder te weten hoe ik het moest aanpakken. Na een paar sessies had ik eindelijk woorden voor wat er speelde. Van daaruit kon ik pas echt bewegen.</p>
+        <div class="ervaring-meta">
+          <div class="ervaring-naam">Marieke V.</div>
+          <div class="ervaring-label">Ondernemer</div>
+        </div>
+      </div>
+      <div class="ervaring reveal d1">
+        <p class="ervaring-quote">Ik was sceptisch over coaching, maar de aanpak is anders. Geen zweverigheid, gewoon eerlijk en direct. Ze stelt vragen waar je niet omheen kunt.</p>
+        <div class="ervaring-meta">
+          <div class="ervaring-naam">Thomas R.</div>
+          <div class="ervaring-label">Manager</div>
+        </div>
+      </div>
+      <div class="ervaring reveal d2">
+        <p class="ervaring-quote">Ik dacht dat ik een burnout had. Het bleek dat ik gewoon al heel lang niet meer bij mezelf was. Fanny hielp me dat zichtbaar te maken, zonder oordeel.</p>
+        <div class="ervaring-meta">
+          <div class="ervaring-naam">Lisa D.</div>
+          <div class="ervaring-label">Zelfstandige</div>
+        </div>
+      </div>
     </div>
   </div>
 </section>
