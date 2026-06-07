@@ -565,10 +565,19 @@ form .btn{align-self:flex-start;margin-top:6px;}
   /* knoppen op mobiel volle breedte */
   .hero-cta{flex-direction:column;}
   .hero-cta .btn{justify-content:center;width:100%;}
-  /* pijlers: 1 kolom op mobiel */
+  /* pijlers: 2 kolom op mobiel */
   .pijlers{grid-template-columns:1fr 1fr;}
   /* duo missie/visie: 1 kolom */
   .duo{grid-template-columns:1fr;}
+  /* scrim niet nodig op mobiel: content heeft eigen chalk achtergrond */
+  .hero-bleed-scrim{display:none;}
+  /* beweging: compacter op mobiel, pijl blijft zichtbaar */
+  .beweging{max-width:100%;}
+  .bw-row{gap:clamp(6px,2vw,16px);padding:clamp(10px,1.8vw,14px) 0;}
+  .bw-row .from{font-size:clamp(14px,3.6vw,18px);}
+  .bw-row .from::before{content:"van ";font-style:normal;font-size:.75em;opacity:.55;letter-spacing:.04em;}
+  .bw-row .ar{font-size:13px;}
+  .bw-row .to{font-size:clamp(15px,3.8vw,20px);}
 }
 
 @media (max-width:560px){
